@@ -177,12 +177,4 @@ var Terminal = Terminal || function (cmdLineContainer, outputContainer) {
       Math.max(d.body.clientHeight, d.documentElement.clientHeight)
     );
   }
-
-  //
-  return {
-    init: function () {
-      output('<img align="left" src="http://www.w3.org/html/logo/downloads/HTML5_Badge_128.png" width="100" height="100" style="padding: 0px 10px 20px 0px"><h2 style="letter-spacing: 4px">Your Terminal</h2><p>' + genTime() + '</p><p>Enter "help" for more information.</p>');
-    },
-    output: output
-  }
 };
