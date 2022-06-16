@@ -22,10 +22,14 @@ var Terminal = Terminal || function (cmdLineContainer, outputContainer) {
   var output_ = document.querySelector(outputContainer);
 
   const CMDS_ = [
-    '<span class="sys">[version]</span>' + '   Display version number.',
-    '<span class="sys">[check]</span>' + '      Check if you have any bitches.',
-    '<span class="sys">[secret]</span>' + '     The key to gaining bitches.',
-    '<span class="sys">[repository]</span>' + ' Check the repository of the project' + '<span class="highlight"> ALIAS: repo</span>'
+    '<span class="sys">[help]</span>' + ' List of commands' + ' ' + '<span class="highlight"> ALIAS: commands, cmds</span>',
+    '<span class="sys">[version]</span>' + ' Display version number' + ' ' + '<span class="highlight"> ALIAS: git</span>',
+    '<span class="sys">[secret]</span>' + ' The key to gaining bitches',
+    '<span class="sys">[developer]</span>' + ' The developer of the project',
+    '<span class="sys">[repository]</span>' + ' Check the repository of the project' + ' ' + '<span class="highlight"> ALIAS: repo</span>',
+    '<span class="sys">[say] (value)</span>' + ' The key to gaining bitches',
+    '<span class="sys">[clear]</span>' + ' Clears the terminal' + ' ' + '<span class="highlight"> ALIAS: purge</span>',
+
   ];
 
   var fs_ = null;
@@ -108,6 +112,11 @@ var Terminal = Terminal || function (cmdLineContainer, outputContainer) {
       }
 
       switch (cmd) {
+
+
+        /* Repository */
+
+
         case 'repo':
           var url = args.join(' ');
           output('<span class="sys">[SYSTEM]</span>' + ' https://github.com/Naibuu/bitches');
@@ -116,22 +125,73 @@ var Terminal = Terminal || function (cmdLineContainer, outputContainer) {
           var url = args.join(' ');
           output('<span class="sys">[SYSTEM]</span>' + ' https://github.com/Naibuu/bitches');
           break;
+
+
+        /* Secret */
+
+
         case 'secret':
           output('<span class="sys">[SYSTEM]</span>' + ' The key to getting bitches is by not having any skill issues unlike you.');
           break;
+
+
+        /* Version */
+
+
+        case 'git':
+          output('<span class="sys">[SYSTEM]</span>' + ' Bitches Terminal v1.0.1');
+          break;
+        case 'version':
+          output('<span class="sys">[SYSTEM]</span>' + ' Bitches Terminal v1.0.1');
+          break;
+
+
+        /* Developer */
+
+
         case 'developer':
           output('<span class="sys">[HS50]</span> ' + "What's up! I'm the developer of this project, if you're looking to see more of my stupid creations. Be sure to visit my github page! It's listed in the bottom right corner");
           break;
+
+
+        /* Clear */
+
+
         case 'clear':
           output_.innerHTML = '';
           this.value = '';
           return;
+        case 'purge':
+          output_.innerHTML = '';
+          this.value = '';
+          return;
+
+        
+        /* Say */
+
+
         case 'say':
           output('<span class="sys">[SYSTEM]</span>' + ' ' + args.join(' '));
           break;
+
+          
+        /* Help */
+
+
         case 'help':
           output('<div class="ls-files">' + CMDS_.join('<br>') + '</div>');
           break;
+        case 'cmds':
+          output('<div class="ls-files">' + CMDS_.join('<br>') + '</div>');
+          break;
+        case 'commands':
+          output('<div class="ls-files">' + CMDS_.join('<br>') + '</div>');
+          break;
+
+
+        /* Error */
+
+
         default:
           if (cmd) {
             output('<div class="error">' + cmd + ' : An unexpected comamnd. Check "help" for the commands list. ' + "</div>");
