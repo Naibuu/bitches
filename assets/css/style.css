@@ -1,0 +1,154 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 3px;
+}
+
+::-webkit-scrollbar-button {
+  background-color: #000
+}
+
+::-webkit-scrollbar-track {
+  background-color: #000
+}
+
+::-webkit-scrollbar-track-piece {
+  background-color: #000
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #000
+}
+
+::-webkit-scrollbar-corner {
+  background-color: #000
+}
+
+::-webkit-resizer {
+  background-color: #000
+}
+
+html,
+body {
+  color: #00cb00;
+  background: #000;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body .splash {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+body #label {
+  letter-spacing: 0.5px;
+  color: #00cb00;
+  animation: rainbow 3s infinite;
+}
+
+body .splash p {
+  color: #00cb00;
+  animation: rainbow 3s infinite;
+  text-align: center;
+}
+
+#container {
+  overflow-y: scroll;
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+  width: 350px;
+  height: 400px;
+  padding: 15px;
+}
+
+#container output {
+  color: #383838;
+  clear: both;
+  width: 100%;
+}
+
+.input-line {
+  border-left: 0.5px dotted #00cb00;
+  display: flex;
+  clear: both;
+}
+
+.prompt {
+  color: #00cb00;
+  animation: rainbow 3s infinite;
+}
+
+span#blink {
+  color: #00cb00;
+  animation: blinker 2s infinite;
+}
+
+span.sys {
+  color: #00cb00;
+  animation: rainbow 3s infinite;
+  opacity: 0.8;
+}
+
+span.highlight {
+  background: rgba(255, 255, 255, 0.1);
+  color: #00cb00;
+  animation: rainbow 3s infinite;
+}
+
+div.error {
+  color: #ff3030;
+  opacity: 0.4;
+}
+
+input {
+  font: inherit;
+  outline: none;
+  background: none;
+  border: none;
+  color: #00cb00;
+  animation: rainbow 3s infinite;
+}
+
+input:placeholder {
+  animation: none;
+  color: rgb(255, 255, 255, 0.05);
+} 
+
+@keyframes rainbow {
+
+  0% {
+      filter: hue-rotate(0deg)
+  }
+
+  100% {
+      filter: hue-rotate(360deg)
+  }
+}
+
+@keyframes spacing {
+
+  0%,
+  100% {
+      letter-spacing: 0px;
+  }
+
+  50% {
+      letter-spacing: 0.5px;
+  }
+}
+
+@keyframes blinker {
+  0% {
+      opacity: 1;
+  }
+  50% {
+      opacity: 0;
+  }
+}
